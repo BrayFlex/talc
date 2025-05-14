@@ -1,0 +1,21 @@
+@use 'talc-effects';
+
+[data-tooltip],
+dialog,
+article,
+.card {
+  @include talc-effects.talc-raise;
+}
+
+// details { // Accordion
+//   @include talc-effects.talc-lower;
+// }
+
+progress {
+  @include talc-effects.talc-concave;
+}
+
+details.dropdown {
+  // Override the general 'details' style for dropdowns
+  @include talc-effects.talc-shrink;
+}

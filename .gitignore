@@ -1,0 +1,10 @@
+PRD.md
+public/
+test-talc.html
+*.session.ai
+*.history.ai
+.ai/
+ai_logs/
+node_modules/
+package-lock.json
+skul.9e24c65d.png

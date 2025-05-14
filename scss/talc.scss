@@ -1,0 +1,19 @@
+// scss/talc.scss
+
+// 1. Talc Variables (Define CSS variables first)
+@use "talc-variables";
+
+// 2. Import Pico CSS (or other base frameworks)
+// This assumes pico is in your node_modules/@picocss/pico/scss/
+@use "@picocss/pico/scss/pico";
+
+// 3. Talc Effects (Apply neumorphism classes using Talc variables)
+@use "talc-effects";
+
+// 4. Talc Component Styles (Apply effects to Pico components)
+@use "typography";
+@use "buttons";
+@use "forms";
+@use "tables";
+@use "nav";
+@use "components";

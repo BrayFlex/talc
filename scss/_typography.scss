@@ -1,0 +1,66 @@
+@use 'talc-effects';
+@use 'talc-variables' as *;
+
+kbd,
+code,
+pre,
+blockquote {
+  @include talc-effects.talc-lower;
+  border-left: 0.25em solid var(--talc-theme-color);
+  border-radius: 4px;
+}
+
+kbd {
+  color: var(--talc-background-inverse);
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+
+  li {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+    position: relative;
+    padding-left: 30px;
+
+    &::marker {
+      content: ""; // Hide default marker
+      display: none;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--talc-highlight);
+      box-shadow: 
+        2px 2px 2px var(--talc-shadow),
+        inset -1px -1px 2px  hsl(from var(--talc-highlight-inverse) h 20% 15%),
+        2px 2px 2px var(--talc-highlight),
+        inset -1px -1px 2px var(--talc-shadow),
+    }
+  }
+}
+
+ol {
+  padding-left: 1em;
+  margin: 0;
+  li {
+    padding-left: 0;
+    margin: 0;
+    position: relative;
+    padding-left: 10px;
+  }
+}
+
+mark {
+  background-color: var(--talc-shadow);
+}

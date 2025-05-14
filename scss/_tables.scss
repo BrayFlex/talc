@@ -1,0 +1,9 @@
+@use 'talc-effects';
+
+table {
+  @include talc-effects.talc-shrink;
+}
+
+th {
+  @include talc-effects.talc-bulge;
+}

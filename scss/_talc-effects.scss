@@ -1,0 +1,51 @@
+// Talc Neumorphism Effects Partial
+
+@mixin talc-raise {
+  margin: 8px;
+  padding: 8px;
+  background: var(--talc-background);
+  box-shadow: 5px 5px 10px var(--talc-shadow),
+             -5px -5px 10px var(--talc-highlight);
+}
+
+@mixin talc-lower {
+  margin: 8px;
+  padding: 8px;
+  background: var(--talc-background);
+  box-shadow: inset 5px 5px 10px var(--talc-shadow),
+             inset -5px -5px 10px var(--talc-highlight);
+}
+
+@mixin talc-bulge {
+  margin: 8px;
+  padding: 8px;
+  background: var(--talc-background);
+  box-shadow: 7px 7px 14px var(--talc-shadow),
+             -7px -7px 14px var(--talc-highlight);
+}
+
+@mixin talc-shrink {
+  margin: 8px;
+  padding: 8px;
+  background: var(--talc-background);
+  box-shadow: inset 7px 7px 14px var(--talc-shadow),
+             inset -7px -7px 14px var(--talc-highlight);
+}
+
+@mixin talc-convex {
+  margin: 8px;
+  padding: 8px;
+  background: linear-gradient(145deg, color-mix(in srgb, var(--talc-background) 90%, var(--talc-highlight)), color-mix(in srgb, var(--talc-background) 90%, var(--talc-shadow)));
+  box-shadow: 5px 5px 10px var(--talc-shadow),
+             -5px -5px 10px var(--talc-highlight);
+  border-radius: 50px; // Example for convex shape
+}
+
+@mixin talc-concave {
+  margin: 8px;
+  padding: 8px;
+  background: linear-gradient(145deg, color-mix(in srgb, var(--talc-background) 90%, var(--talc-shadow)), color-mix(in srgb, var(--talc-background) 90%, var(--talc-highlight)));
+  box-shadow: inset 5px 5px 10px var(--talc-shadow),
+             inset -5px -5px 10px var(--talc-highlight);
+  border-radius: 50px; // Example for concave shape
+}

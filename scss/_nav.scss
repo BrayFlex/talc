@@ -1,0 +1,5 @@
+@use 'talc-effects';
+
+nav {
+  @include talc-effects.talc-convex;
+}

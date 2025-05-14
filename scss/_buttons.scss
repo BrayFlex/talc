@@ -1,0 +1,19 @@
+@use 'talc-effects';
+
+button,
+[role="button"],
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  @include talc-effects.talc-raise;
+}
+
+button.outline,
+[role="button"].outline {
+  @include talc-effects.talc-bulge;
+}
+
+[role="group"] {
+    @include talc-effects.talc-bulge;
+    padding: 0px;
+}

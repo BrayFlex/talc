@@ -1,0 +1,19 @@
+@use 'talc-effects';
+
+input[type="text"],
+input[type="search"],
+input[type="date"],
+input[type="time"],
+input[type="color"],
+textarea {
+  @include talc-effects.talc-lower;
+}
+
+input[type="checkbox"],
+input[type="radio"],
+select,
+input[type="file"],
+input[type="range"],
+[role="switch"] {
+  @include talc-effects.talc-shrink;
+}

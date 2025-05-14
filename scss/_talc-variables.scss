@@ -1,0 +1,44 @@
+// Talc Variables Partial
+
+:root {
+  // Base theme color
+  --talc-theme-color: #25b0cc;
+
+  // Light theme variables
+  --talc-background-light: hsl(from var(--talc-theme-color) h 40% 97%);
+  --talc-shadow-light: hsl(from var(--talc-theme-color) h 50% 10% / 3%);
+  --talc-highlight-light: hsl(from var(--talc-theme-color) h 99% 99% / 95%);
+
+  // Dark theme variables
+  --talc-background-dark: hsl(from var(--talc-theme-color) h 30% 10%);
+  --talc-shadow-dark: hsl(from var(--talc-theme-color) h 99% 3% / 25%);
+  --talc-highlight-dark: hsl(from var(--talc-theme-color) h 25% 20% / 10%);
+
+  // Default to light theme variables initially
+  --talc-background: var(--talc-background-light);
+  --talc-shadow: var(--talc-shadow-light);
+  --talc-highlight: var(--talc-highlight-light);
+  --talc-background-inverse: var(--talc-background-dark);
+  --talc-shadow-inverse: var(--talc-shadow-dark);
+  --talc-highlight-inverse: var(--talc-highlight-dark);
+}
+
+// Apply explicit light theme via data-theme attribute
+:root[data-theme="light"] {
+  --talc-background: var(--talc-background-light);
+  --talc-shadow: var(--talc-shadow-light);
+  --talc-highlight: var(--talc-highlight-light);
+  --talc-background-inverse: var(--talc-background-dark);
+  --talc-shadow-inverse: var(--talc-shadow-dark);
+  --talc-highlight-inverse: var(--talc-highlight-dark);
+}
+
+// Apply explicit dark theme via data-theme attribute
+:root[data-theme="dark"] {
+  --talc-background: var(--talc-background-dark);
+  --talc-shadow: var(--talc-shadow-dark);
+  --talc-highlight: var(--talc-highlight-dark);
+  --talc-background-inverse: var(--talc-background-light);
+  --talc-shadow-inverse: var(--talc-shadow-light);
+  --talc-highlight-inverse: var(--talc-highlight-light);
+}
