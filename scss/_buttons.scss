@@ -5,15 +5,100 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  @include talc-effects.talc-raise;
+  // &:hover {
+  //   @include talc-effects.talc-shrink;
+  // }
+  // &:not(:hover) {
+  //   @include talc-effects.talc-raise;
+  // }
+}
+
+button:not(.outline) {
+  border-width: 0px;
+    margin: 8px;
+    padding: 8px;
+  &:not(.secondary):not(.contrast) {
+    background: var(--talc-theme-color);
+    box-shadow: inset -1px -1px 5px var(--talc-primary-shadow),
+               inset 1px 1px 5px var(--talc-primary-highlight),
+               5px 5px 10px var(--talc-shadow),
+               -5px -5px 10px var(--talc-highlight);
+  }
+  
+  &.secondary {
+    background: var(--talc-secondary);
+    box-shadow: inset -1px -1px 5px var(--talc-secondary-shadow),
+               inset 1px 1px 5px var(--talc-secondary-highlight),
+               5px 5px 10px var(--talc-shadow),
+               -5px -5px 10px var(--talc-highlight);
+  }
+  
+  &.contrast {
+    background: var(--talc-contrast);
+    box-shadow: inset -1px -1px 5px var(--talc-contrast-shadow),
+               inset 1px 1px 5px var(--talc-contrast-highlight),
+               5px 5px 10px var(--talc-shadow),
+               -5px -5px 10px var(--talc-highlight);
+  }
 }
 
 button.outline,
 [role="button"].outline {
-  @include talc-effects.talc-bulge;
+  &:hover {
+    @include talc-effects.talc-lower;
+  }
+  &:not(:hover) {
+    @include talc-effects.talc-bulge;
+  }
+  
+  &:not(.secondary):not(.contrast) {
+    border-color: var(--talc-theme-color);
+    color: var(--talc-theme-color);
+  }
+  
+  &.secondary {
+    border-color: var(--talc-secondary);
+    color: var(--talc-secondary);
+  }
+  
+  &.contrast {
+    border-color: var(--talc-contrast);
+    color: var(--talc-contrast);
+  }
 }
 
 [role="group"] {
-    @include talc-effects.talc-bulge;
-    padding: 0px;
+    margin: 4px;
+    padding: 4px;
+    button {
+      margin: 0px;
+      
+      // Override inset shadows for all button types in group
+      &:not(.outline) {
+        
+        &:not(.secondary):not(.contrast) {
+          box-shadow: inset 1px 1px 2px var(--talc-primary-shadow),
+                      inset -1px -1px 2px var(--talc-primary-shadow);
+        }
+        &.secondary {
+          box-shadow: inset 1px 1px 2px var(--talc-secondary-shadow),
+                      inset -1px -1px 2px var(--talc-secondary-shadow);
+        }
+        &.contrast {
+          box-shadow: inset 1px 1px 2px var(--talc-contrast-shadow),
+                      inset -1px -1px 2px var(--talc-contrast-shadow);
+        }
+      }
+      
+      &.outline {
+        &:not(.secondary):not(.contrast) {
+        }
+        
+        &.secondary {
+        }
+        
+        &.contrast {
+        }
+      }
+    }
 }

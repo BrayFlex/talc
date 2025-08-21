@@ -4,32 +4,60 @@
   margin: 8px;
   padding: 8px;
   background: var(--talc-background);
-  box-shadow: 5px 5px 10px var(--talc-shadow),
-             -5px -5px 10px var(--talc-highlight);
+  box-shadow: 2px 2px 3px var(--talc-shadow),
+              -2px -2px 3px var(--talc-highlight),
+              4px 4px 6px var(--talc-shadow),
+              -4px -4px 6px var(--talc-highlight),
+              1px 8px 10px var(--talc-shadow),
+              -1px -8px 10px var(--talc-highlight);
 }
 
 @mixin talc-lower {
   margin: 8px;
   padding: 8px;
   background: var(--talc-background);
-  box-shadow: inset 5px 5px 10px var(--talc-shadow),
-             inset -5px -5px 10px var(--talc-highlight);
+  box-shadow: inset 2px 2px 3px var(--talc-shadow),
+              inset -2px -2px 3px var(--talc-highlight),
+              inset 4px 4px 6px var(--talc-shadow),
+              inset -4px -4px 6px var(--talc-highlight),
+              inset 1px 8px 10px var(--talc-shadow),
+              inset -1px -8px 10px var(--talc-highlight);
 }
 
 @mixin talc-bulge {
   margin: 8px;
   padding: 8px;
   background: var(--talc-background);
-  box-shadow: 7px 7px 14px var(--talc-shadow),
-             -7px -7px 14px var(--talc-highlight);
+  box-shadow: inset 2px 2px 3px var(--talc-highlight),
+              inset -2px -2px 3px var(--talc-shadow),
+              inset 4px 4px 6px var(--talc-highlight),
+              inset -4px -4px 6px var(--talc-shadow),
+              inset 1px 8px 10px var(--talc-highlight),
+              inset -1px -8px 10px var(--talc-shadow),
+              2px 2px 3px var(--talc-highlight),
+              -2px -2px 3px var(--talc-shadow),
+              4px 4px 6px var(--talc-highlight),
+              -4px -4px 6px var(--talc-shadow),
+              1px 8px 10px var(--talc-highlight),
+              -1px -8px 10px var(--talc-shadow);
 }
 
 @mixin talc-shrink {
   margin: 8px;
   padding: 8px;
   background: var(--talc-background);
-  box-shadow: inset 7px 7px 14px var(--talc-shadow),
-             inset -7px -7px 14px var(--talc-highlight);
+  box-shadow: inset 2px 2px 3px var(-talc--shadow),
+              inset -2px -2px 3px var(--talc-highlight),
+              inset 4px 4px 6px var(--talc-shadow),
+              inset -4px -4px 6px var(--talc-highlight),
+              inset 1px 8px 10px var(--talc-shadow),
+              inset -1px -8px 10px var(--talc-highlight),
+              2px 2px 3px var(--talc-shadow),
+              -2px -2px 3px var(--talc-highlight),
+              4px 4px 6px var(--talc-shadow),
+              -4px -4px 6px var(--talc-highlight),
+              1px 8px 10px var(--talc-shadow),
+              -1px -8px 10px var(--talc-highlight);
 }
 
 @mixin talc-convex {

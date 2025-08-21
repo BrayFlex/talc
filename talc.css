@@ -1,36 +1,110 @@
 @charset "UTF-8";
 :root {
-  --talc-theme-color: #25b0cc;
-  --talc-background-light: hsl(from var(--talc-theme-color) h 40% 97%);
-  --talc-shadow-light: hsl(from var(--talc-theme-color) h 50% 10% / 3%);
-  --talc-highlight-light: hsl(from var(--talc-theme-color) h 99% 99% / 95%);
-  --talc-background-dark: hsl(from var(--talc-theme-color) h 30% 10%);
-  --talc-shadow-dark: hsl(from var(--talc-theme-color) h 99% 3% / 25%);
-  --talc-highlight-dark: hsl(from var(--talc-theme-color) h 25% 20% / 10%);
-  --talc-background: var(--talc-background-light);
-  --talc-shadow: var(--talc-shadow-light);
-  --talc-highlight: var(--talc-highlight-light);
-  --talc-background-inverse: var(--talc-background-dark);
-  --talc-shadow-inverse: var(--talc-shadow-dark);
-  --talc-highlight-inverse: var(--talc-highlight-dark);
+  --talc-theme-color: #ca53e5;
+  --light-bg-s: 40%;
+  --light-bg-l: 97%;
+  --light-shadow-s: 50%;
+  --light-shadow-l: 10%;
+  --light-shadow-a: 3%;
+  --light-highlight-s: 99%;
+  --light-highlight-l: 99%;
+  --light-highlight-a: 95%;
+  --light-secondary-s: 75%;
+  --light-secondary-l: 60%;
+  --light-contrast-s: 50%;
+  --light-contrast-l: 10%;
+  --light-primary-shadow-s: 50%;
+  --light-primary-shadow-l: 20%;
+  --light-primary-shadow-a: 25%;
+  --light-primary-highlight-s: 50%;
+  --light-primary-highlight-l: 75%;
+  --light-primary-highlight-a: 95%;
+  --dark-bg-s: 30%;
+  --dark-bg-l: 10%;
+  --dark-shadow-s: 99%;
+  --dark-shadow-l: 3%;
+  --dark-shadow-a: 25%;
+  --dark-highlight-s: 25%;
+  --dark-highlight-l: 20%;
+  --dark-highlight-a: 10%;
+  --dark-secondary-s: 75%;
+  --dark-secondary-l: 30%;
+  --dark-contrast-s: 50%;
+  --dark-contrast-l: 90%;
+  --dark-primary-shadow-s: 50%;
+  --dark-primary-shadow-l: 10%;
+  --dark-primary-shadow-a: 75%;
+  --dark-primary-highlight-s: 50%;
+  --dark-primary-highlight-l: 75%;
+  --dark-primary-highlight-a: 25%;
 }
 
-:root[data-theme=light] {
-  --talc-background: var(--talc-background-light);
-  --talc-shadow: var(--talc-shadow-light);
-  --talc-highlight: var(--talc-highlight-light);
-  --talc-background-inverse: var(--talc-background-dark);
-  --talc-shadow-inverse: var(--talc-shadow-dark);
-  --talc-highlight-inverse: var(--talc-highlight-dark);
+:root {
+  --theme-bg-s: var(--light-bg-s);
+  --theme-bg-l: var(--light-bg-l);
+  --theme-shadow-s: var(--light-shadow-s);
+  --theme-shadow-l: var(--light-shadow-l);
+  --theme-shadow-a: var(--light-shadow-a);
+  --theme-highlight-s: var(--light-highlight-s);
+  --theme-highlight-l: var(--light-highlight-l);
+  --theme-highlight-a: var(--light-highlight-a);
+  --theme-secondary-s: var(--light-secondary-s);
+  --theme-secondary-l: var(--light-secondary-l);
+  --theme-contrast-s: var(--light-contrast-s);
+  --theme-contrast-l: var(--light-contrast-l);
+  --theme-primary-shadow-s: var(--light-primary-shadow-s);
+  --theme-primary-shadow-l: var(--light-primary-shadow-l);
+  --theme-primary-shadow-a: var(--light-primary-shadow-a);
+  --theme-primary-highlight-s: var(--light-primary-highlight-s);
+  --theme-primary-highlight-l: var(--light-primary-highlight-l);
+  --theme-primary-highlight-a: var(--light-primary-highlight-a);
 }
 
 :root[data-theme=dark] {
-  --talc-background: var(--talc-background-dark);
-  --talc-shadow: var(--talc-shadow-dark);
-  --talc-highlight: var(--talc-highlight-dark);
-  --talc-background-inverse: var(--talc-background-light);
-  --talc-shadow-inverse: var(--talc-shadow-light);
-  --talc-highlight-inverse: var(--talc-highlight-light);
+  --theme-bg-s: var(--dark-bg-s);
+  --theme-bg-l: var(--dark-bg-l);
+  --theme-shadow-s: var(--dark-shadow-s);
+  --theme-shadow-l: var(--dark-shadow-l);
+  --theme-shadow-a: var(--dark-shadow-a);
+  --theme-highlight-s: var(--dark-highlight-s);
+  --theme-highlight-l: var(--dark-highlight-l);
+  --theme-highlight-a: var(--dark-highlight-a);
+  --theme-secondary-s: var(--dark-secondary-s);
+  --theme-secondary-l: var(--dark-secondary-l);
+  --theme-contrast-s: var(--dark-contrast-s);
+  --theme-contrast-l: var(--dark-contrast-l);
+  --theme-primary-shadow-s: var(--dark-primary-shadow-s);
+  --theme-primary-shadow-l: var(--dark-primary-shadow-l);
+  --theme-primary-shadow-a: var(--dark-primary-shadow-a);
+  --theme-primary-highlight-s: var(--dark-primary-highlight-s);
+  --theme-primary-highlight-l: var(--dark-primary-highlight-l);
+  --theme-primary-highlight-a: var(--dark-primary-highlight-a);
+}
+
+:root {
+  --talc-background: hsl(from var(--talc-theme-color) h var(--theme-bg-s) var(--theme-bg-l));
+  --talc-shadow: hsl(from var(--talc-theme-color) h var(--theme-shadow-s) var(--theme-shadow-l) / var(--theme-shadow-a));
+  --talc-highlight: hsl(from var(--talc-theme-color) h var(--theme-highlight-s) var(--theme-highlight-l) / var(--theme-highlight-a));
+  --talc-secondary: hsl(from var(--talc-theme-color) h var(--theme-secondary-s) var(--theme-secondary-l));
+  --talc-contrast: hsl(from var(--talc-theme-color) h var(--theme-contrast-s) var(--theme-contrast-l));
+  --talc-primary-shadow: hsl(from var(--talc-theme-color) h var(--theme-primary-shadow-s) var(--theme-primary-shadow-l) / var(--theme-primary-shadow-a));
+  --talc-primary-highlight: hsl(from var(--talc-theme-color) h var(--theme-primary-highlight-s) var(--theme-primary-highlight-l) / var(--theme-primary-highlight-a));
+  --talc-background-inverse: hsl(from var(--talc-theme-color) h var(--dark-bg-s) var(--dark-bg-l));
+  --talc-shadow-inverse: hsl(from var(--talc-theme-color) h var(--dark-shadow-s) var(--dark-shadow-l) / var(--dark-shadow-a));
+  --talc-highlight-inverse: hsl(from var(--talc-theme-color) h var(--dark-highlight-s) var(--dark-highlight-l) / var(--dark-highlight-a));
+}
+
+:root[data-theme=dark] {
+  --talc-background-inverse: hsl(from var(--talc-theme-color) h var(--light-bg-s) var(--light-bg-l));
+  --talc-shadow-inverse: hsl(from var(--talc-theme-color) h var(--light-shadow-s) var(--light-shadow-l) / var(--light-shadow-a));
+  --talc-highlight-inverse: hsl(from var(--talc-theme-color) h var(--light-highlight-s) var(--light-highlight-l) / var(--light-highlight-a));
+}
+
+:root {
+  --talc-secondary-shadow: hsl(from var(--talc-secondary) h var(--theme-primary-shadow-s) var(--theme-primary-shadow-l) / var(--theme-primary-shadow-a));
+  --talc-secondary-highlight: hsl(from var(--talc-secondary) h var(--theme-primary-highlight-s) var(--theme-primary-highlight-l) / var(--theme-primary-highlight-a));
+  --talc-contrast-shadow: hsl(from var(--talc-contrast) h var(--theme-primary-shadow-s) var(--theme-primary-shadow-l) / var(--theme-primary-shadow-a));
+  --talc-contrast-highlight: hsl(from var(--talc-contrast) h var(--theme-primary-highlight-s) var(--theme-primary-highlight-l) / var(--theme-primary-highlight-a));
 }
 
 /*!
@@ -2847,7 +2921,7 @@ blockquote {
   margin: 8px;
   padding: 8px;
   background: var(--talc-background);
-  box-shadow: inset 5px 5px 10px var(--talc-shadow), inset -5px -5px 10px var(--talc-highlight);
+  box-shadow: inset 2px 2px 3px var(--talc-shadow), inset -2px -2px 3px var(--talc-highlight), inset 4px 4px 6px var(--talc-shadow), inset -4px -4px 6px var(--talc-highlight), inset 1px 8px 10px var(--talc-shadow), inset -1px -8px 10px var(--talc-highlight);
   border-left: 0.25em solid var(--talc-theme-color);
   border-radius: 4px;
 }
@@ -2900,33 +2974,70 @@ mark {
   background-color: var(--talc-shadow);
 }
 
-button,
-[role=button],
-input[type=button],
-input[type=reset],
-input[type=submit] {
+button:not(.outline) {
+  border-width: 0px;
   margin: 8px;
   padding: 8px;
-  background: var(--talc-background);
-  box-shadow: 5px 5px 10px var(--talc-shadow), -5px -5px 10px var(--talc-highlight);
+}
+button:not(.outline):not(.secondary):not(.contrast) {
+  background: var(--talc-theme-color);
+  box-shadow: inset -1px -1px 5px var(--talc-primary-shadow), inset 1px 1px 5px var(--talc-primary-highlight), 5px 5px 10px var(--talc-shadow), -5px -5px 10px var(--talc-highlight);
+}
+button:not(.outline).secondary {
+  background: var(--talc-secondary);
+  box-shadow: inset -1px -1px 5px var(--talc-secondary-shadow), inset 1px 1px 5px var(--talc-secondary-highlight), 5px 5px 10px var(--talc-shadow), -5px -5px 10px var(--talc-highlight);
+}
+button:not(.outline).contrast {
+  background: var(--talc-contrast);
+  box-shadow: inset -1px -1px 5px var(--talc-contrast-shadow), inset 1px 1px 5px var(--talc-contrast-highlight), 5px 5px 10px var(--talc-shadow), -5px -5px 10px var(--talc-highlight);
 }
 
-button.outline,
-[role=button].outline {
+button.outline:hover,
+[role=button].outline:hover {
   margin: 8px;
   padding: 8px;
   background: var(--talc-background);
-  box-shadow: 7px 7px 14px var(--talc-shadow), -7px -7px 14px var(--talc-highlight);
+  box-shadow: inset 2px 2px 3px var(--talc-shadow), inset -2px -2px 3px var(--talc-highlight), inset 4px 4px 6px var(--talc-shadow), inset -4px -4px 6px var(--talc-highlight), inset 1px 8px 10px var(--talc-shadow), inset -1px -8px 10px var(--talc-highlight);
+}
+button.outline:not(:hover),
+[role=button].outline:not(:hover) {
+  margin: 8px;
+  padding: 8px;
+  background: var(--talc-background);
+  box-shadow: inset 2px 2px 3px var(--talc-highlight), inset -2px -2px 3px var(--talc-shadow), inset 4px 4px 6px var(--talc-highlight), inset -4px -4px 6px var(--talc-shadow), inset 1px 8px 10px var(--talc-highlight), inset -1px -8px 10px var(--talc-shadow), 2px 2px 3px var(--talc-highlight), -2px -2px 3px var(--talc-shadow), 4px 4px 6px var(--talc-highlight), -4px -4px 6px var(--talc-shadow), 1px 8px 10px var(--talc-highlight), -1px -8px 10px var(--talc-shadow);
+}
+button.outline:not(.secondary):not(.contrast),
+[role=button].outline:not(.secondary):not(.contrast) {
+  border-color: var(--talc-theme-color);
+  color: var(--talc-theme-color);
+}
+button.outline.secondary,
+[role=button].outline.secondary {
+  border-color: var(--talc-secondary);
+  color: var(--talc-secondary);
+}
+button.outline.contrast,
+[role=button].outline.contrast {
+  border-color: var(--talc-contrast);
+  color: var(--talc-contrast);
 }
 
 [role=group] {
-  margin: 8px;
-  padding: 8px;
-  background: var(--talc-background);
-  box-shadow: 7px 7px 14px var(--talc-shadow), -7px -7px 14px var(--talc-highlight);
-  padding: 0px;
+  margin: 4px;
+  padding: 4px;
 }
-
+[role=group] button {
+  margin: 0px;
+}
+[role=group] button:not(.outline):not(.secondary):not(.contrast) {
+  box-shadow: inset 1px 1px 2px var(--talc-primary-shadow), inset -1px -1px 2px var(--talc-primary-shadow);
+}
+[role=group] button:not(.outline).secondary {
+  box-shadow: inset 1px 1px 2px var(--talc-secondary-shadow), inset -1px -1px 2px var(--talc-secondary-shadow);
+}
+[role=group] button:not(.outline).contrast {
+  box-shadow: inset 1px 1px 2px var(--talc-contrast-shadow), inset -1px -1px 2px var(--talc-contrast-shadow);
+}
 input[type=text],
 input[type=search],
 input[type=date],
@@ -2936,7 +3047,7 @@ textarea {
   margin: 8px;
   padding: 8px;
   background: var(--talc-background);
-  box-shadow: inset 5px 5px 10px var(--talc-shadow), inset -5px -5px 10px var(--talc-highlight);
+  box-shadow: inset 2px 2px 3px var(--talc-shadow), inset -2px -2px 3px var(--talc-highlight), inset 4px 4px 6px var(--talc-shadow), inset -4px -4px 6px var(--talc-highlight), inset 1px 8px 10px var(--talc-shadow), inset -1px -8px 10px var(--talc-highlight);
 }
 
 input[type=checkbox],
@@ -2948,21 +3059,21 @@ input[type=range],
   margin: 8px;
   padding: 8px;
   background: var(--talc-background);
-  box-shadow: inset 7px 7px 14px var(--talc-shadow), inset -7px -7px 14px var(--talc-highlight);
+  box-shadow: inset 2px 2px 3px var(-talc--shadow), inset -2px -2px 3px var(--talc-highlight), inset 4px 4px 6px var(--talc-shadow), inset -4px -4px 6px var(--talc-highlight), inset 1px 8px 10px var(--talc-shadow), inset -1px -8px 10px var(--talc-highlight), 2px 2px 3px var(--talc-shadow), -2px -2px 3px var(--talc-highlight), 4px 4px 6px var(--talc-shadow), -4px -4px 6px var(--talc-highlight), 1px 8px 10px var(--talc-shadow), -1px -8px 10px var(--talc-highlight);
 }
 
 table {
   margin: 8px;
   padding: 8px;
   background: var(--talc-background);
-  box-shadow: inset 7px 7px 14px var(--talc-shadow), inset -7px -7px 14px var(--talc-highlight);
+  box-shadow: inset 2px 2px 3px var(-talc--shadow), inset -2px -2px 3px var(--talc-highlight), inset 4px 4px 6px var(--talc-shadow), inset -4px -4px 6px var(--talc-highlight), inset 1px 8px 10px var(--talc-shadow), inset -1px -8px 10px var(--talc-highlight), 2px 2px 3px var(--talc-shadow), -2px -2px 3px var(--talc-highlight), 4px 4px 6px var(--talc-shadow), -4px -4px 6px var(--talc-highlight), 1px 8px 10px var(--talc-shadow), -1px -8px 10px var(--talc-highlight);
 }
 
 th {
   margin: 8px;
   padding: 8px;
   background: var(--talc-background);
-  box-shadow: 7px 7px 14px var(--talc-shadow), -7px -7px 14px var(--talc-highlight);
+  box-shadow: inset 2px 2px 3px var(--talc-highlight), inset -2px -2px 3px var(--talc-shadow), inset 4px 4px 6px var(--talc-highlight), inset -4px -4px 6px var(--talc-shadow), inset 1px 8px 10px var(--talc-highlight), inset -1px -8px 10px var(--talc-shadow), 2px 2px 3px var(--talc-highlight), -2px -2px 3px var(--talc-shadow), 4px 4px 6px var(--talc-highlight), -4px -4px 6px var(--talc-shadow), 1px 8px 10px var(--talc-highlight), -1px -8px 10px var(--talc-shadow);
 }
 
 nav {
@@ -2980,7 +3091,7 @@ article,
   margin: 8px;
   padding: 8px;
   background: var(--talc-background);
-  box-shadow: 5px 5px 10px var(--talc-shadow), -5px -5px 10px var(--talc-highlight);
+  box-shadow: 2px 2px 3px var(--talc-shadow), -2px -2px 3px var(--talc-highlight), 4px 4px 6px var(--talc-shadow), -4px -4px 6px var(--talc-highlight), 1px 8px 10px var(--talc-shadow), -1px -8px 10px var(--talc-highlight);
 }
 
 progress {
@@ -2995,7 +3106,7 @@ details.dropdown {
   margin: 8px;
   padding: 8px;
   background: var(--talc-background);
-  box-shadow: inset 7px 7px 14px var(--talc-shadow), inset -7px -7px 14px var(--talc-highlight);
+  box-shadow: inset 2px 2px 3px var(-talc--shadow), inset -2px -2px 3px var(--talc-highlight), inset 4px 4px 6px var(--talc-shadow), inset -4px -4px 6px var(--talc-highlight), inset 1px 8px 10px var(--talc-shadow), inset -1px -8px 10px var(--talc-highlight), 2px 2px 3px var(--talc-shadow), -2px -2px 3px var(--talc-highlight), 4px 4px 6px var(--talc-shadow), -4px -4px 6px var(--talc-highlight), 1px 8px 10px var(--talc-shadow), -1px -8px 10px var(--talc-highlight);
 }
 
 /*# sourceMappingURL=talc.css.map */
