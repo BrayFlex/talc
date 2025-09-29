@@ -1,6 +1,17 @@
 @use 'talc-effects';
 @use 'talc-variables' as *;
 
+
+a {
+    color: var(--talc-secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+
+  &:hover {
+  color: var(--talc-theme-color);
+  }
+}
+
 kbd,
 code,
 pre,
